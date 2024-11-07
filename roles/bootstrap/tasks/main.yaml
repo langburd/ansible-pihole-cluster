@@ -13,10 +13,10 @@
       - unzip
     state: present
 
-- name: Set a hostname
-  ansible.builtin.hostname:
-    name: "{{ inventory_hostname }}"
-  notify: Reboot after hostname change
+# - name: Set a hostname
+#   ansible.builtin.hostname:
+#     name: "{{ inventory_hostname }}"
+#   notify: Reboot after hostname change
 
 - name: Add IP address of all hosts to all hosts
   ansible.builtin.lineinfile:
@@ -38,5 +38,5 @@
 - name: Populate service facts
   ansible.builtin.service_facts:
 
-- name: Flush handlers
-  ansible.builtin.meta: flush_handlers
+# - name: Flush handlers
+#   ansible.builtin.meta: flush_handlers

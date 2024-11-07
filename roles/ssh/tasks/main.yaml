@@ -1,13 +1,13 @@
 - name: Generate SSH keypairs
   community.crypto.openssh_keypair:
-    path: /home/{{ ansible_user }}/.ssh/id_rsa
+    path: "{{ ansible_env.HOME }}/.ssh/id_rsa"
     comment: "{{ inventory_hostname }}"
     type: ed25519
     owner: "{{ ansible_user }}"
 
 - name: Fetch SSH keys
   ansible.builtin.fetch:
-    src: /home/{{ ansible_user }}/.ssh/id_rsa.pub
+    src: "{{ ansible_env.HOME }}/.ssh/id_rsa.pub"
     dest: buffer/{{ inventory_hostname }}-id_rsa.pub
     flat: true
 
@@ -25,7 +25,7 @@
   ansible.builtin.known_hosts:
     name: "{{ item }}"
     key: "{{ lookup('pipe', 'ssh-keyscan {{ item }},`dig +short {{ item }}`') }}"
-    path: /home/{{ ansible_user }}/.ssh/known_hosts
+    path: "{{ ansible_env.HOME }}/.ssh/known_hosts"
   when: item != ansible_host
   with_items:
     - "{{ groups['master'] | map('extract', hostvars, 'ansible_host') | list }}"
