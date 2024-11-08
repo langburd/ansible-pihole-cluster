@@ -2,6 +2,8 @@
   hosts: pihole_cluster
   become: true
   ignore_unreachable: false
+  vars_files:
+    - inventory/group_vars/vault.yaml
   roles:
     - role: updates
     - role: bootstrap

@@ -3,6 +3,8 @@
   become: true
   serial: 1
   ignore_unreachable: false
+  vars_files:
+    - inventory/group_vars/vault.yaml
   roles:
     - updates
     - pihole
