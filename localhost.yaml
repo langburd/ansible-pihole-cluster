@@ -1,6 +1,6 @@
 ---
 - name: Bootstrap
-  hosts: pihole_cluster
+  hosts: pihole_standalone
   become: true
   ignore_unreachable: false
   vars_files:
