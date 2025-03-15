@@ -103,7 +103,7 @@
   until: pihole_ftl_status.status.ActiveState == 'active'
 
 - name: Set Pi-hole FTL WEB password
-  ansible.builtin.command: pihole -a -p {{ pihole_webpassword }}
+  ansible.builtin.command: pihole setpassword {{ pihole_webpassword }}
   changed_when: false
 
 - name: Restart Pi-hole DNS

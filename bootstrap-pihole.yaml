@@ -1,3 +1,4 @@
+---
 - name: Bootstrap
   hosts: pihole_cluster
   become: true
