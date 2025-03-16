@@ -1,6 +1,6 @@
 ---
 - name: Bootstrap
-  hosts: pihole_standalone
+  hosts: localhost
   become: true
   ignore_unreachable: false
   vars_files:
@@ -11,6 +11,7 @@
     - role: firewalld
       when: ansible_os_family == 'RedHat' and 'firewalld.service' in ansible_facts.services
     - role: ssh
+      when: ansible_play_hosts | length > 1
     - role: keepalived
       when: enable_keepalived
     - role: unbound
