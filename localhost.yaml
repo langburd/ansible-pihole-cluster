@@ -8,17 +8,17 @@
   roles:
     - role: updates
     - role: bootstrap
+    - role: docker
+      when: enable_nebula_sync
     - role: firewalld
-      when: ansible_os_family == 'RedHat' and 'firewalld.service' in ansible_facts.services
-    - role: ssh
-      when: ansible_play_hosts | length > 1
+      when: ansible_os_family == "RedHat" and 'firewalld.service' in ansible_facts.services
     - role: keepalived
       when: enable_keepalived
     - role: unbound
       when: enable_unbound
     - role: pihole
-    - role: gravity_sync
-      when: enable_gravity_sync
+    - role: nebula_sync
+      when: enable_nebula_sync
     - role: pihole_updatelists
       when: enable_pihole_updatelists
     - role: status
