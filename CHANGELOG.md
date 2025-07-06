@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0](https://github.com/danylomikula/ansible-pihole-cluster/compare/v2.1.0...v2.2.0) (2025-06-01)
+
+### Features
+
+* Bump Pi-hole to 6.1, allow NTP in firewalld, and add pihole‑FTL restart retries ([#18](https://github.com/danylomikula/ansible-pihole-cluster/issues/18)) ([b4e55e1](https://github.com/danylomikula/ansible-pihole-cluster/commit/b4e55e1496f0791ada9a88bda84b7e85789c51fb))
+
+## [2.1.0](https://github.com/danylomikula/ansible-pihole-cluster/compare/v2.0.0...v2.1.0) (2025-03-21)
+
+### Features
+
+* Expand pihole.toml configuration & bump nebula-sync v0.7.0 ([#17](https://github.com/danylomikula/ansible-pihole-cluster/issues/17)) ([141fe7e](https://github.com/danylomikula/ansible-pihole-cluster/commit/141fe7e9735f4ad9f245fc47387300d7854b8295))
+
+## [2.0.0](https://github.com/danylomikula/ansible-pihole-cluster/compare/v1.3.0...v2.0.0) (2025-03-19)
+
+### ⚠ BREAKING CHANGES
+
+* Pi-hole v6 Support (#16)
+
+### Features
+
+* Pi-hole v6 Support ([#16](https://github.com/danylomikula/ansible-pihole-cluster/issues/16)) ([f868590](https://github.com/danylomikula/ansible-pihole-cluster/commit/f8685904147ca332ad91bcf87aa958f7b834c8dc))
+
+## [1.3.0](https://github.com/danylomikula/ansible-pihole-cluster/compare/v1.2.0...v1.3.0) (2025-01-11)
+
+### Features
+
+* Upgrade Pi-hole to 5.18.4; update README ([#14](https://github.com/danylomikula/ansible-pihole-cluster/issues/14)) ([4c99e05](https://github.com/danylomikula/ansible-pihole-cluster/commit/4c99e058dd7c64ad3e45323c5c71bf21eea9c02b))
+
 ## [1.2.0](https://github.com/danylomikula/ansible-pihole-cluster/compare/v1.1.0...v1.2.0) (2024-08-28)
 
 ### Features
