@@ -42,15 +42,6 @@
   ansible.builtin.debug:
     var: updatelists_process_status.stdout_lines
 
-- name: Add URLs to Pi-hole whitelist
-  ansible.builtin.shell: "pihole allow {{ pihole_custom_whitelist | join(' ') }}"
-  register: whitelist_process_status
-  changed_when: false
-
-- name: Display whitelist process
-  ansible.builtin.debug:
-    var: whitelist_process_status.stdout_lines
-
 - name: Update Pi-hole Gravity
   ansible.builtin.command: pihole updateGravity
   register: gravity_process_status
